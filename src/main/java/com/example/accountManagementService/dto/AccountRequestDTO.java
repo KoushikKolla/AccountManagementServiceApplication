@@ -28,6 +28,7 @@ public class AccountRequestDTO {
 
     @Schema(example = "john@test.com")
     @Email(message = "Invalid email")
+    @NotBlank(message = "Email is required")
     private String email;
 
     public AccountRequestDTO() {

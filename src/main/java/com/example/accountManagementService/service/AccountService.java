@@ -41,7 +41,7 @@ public class AccountService {
         Account account = new Account();
 
         account.setCustomerName(requestDTO.getCustomerName());
-        account.setEmail(requestDTO.getEmail().toLowerCase().trim());
+        account.setEmail(requestDTO.getEmail().trim().toLowerCase());
         account.setBalance(requestDTO.getBalance());
         account.setAccountType(requestDTO.getAccountType());
 
