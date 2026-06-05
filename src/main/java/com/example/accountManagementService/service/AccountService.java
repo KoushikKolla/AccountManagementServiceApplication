@@ -28,7 +28,7 @@ public class AccountService {
 
         response.setAccountId(account.getAccountId());
         response.setCustomerName(account.getCustomerName());
-        response.setEmail(account.getEmail().toLowerCase());
+        response.setEmail(account.getEmail().toLowerCase().trim());
         response.setBalance(account.getBalance());
         response.setAccountType(account.getAccountType());
         response.setStatus(account.getStatus());
