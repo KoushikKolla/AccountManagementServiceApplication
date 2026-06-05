@@ -1,9 +1,15 @@
 package com.example.accountManagementService.dto;
 
 import com.example.accountManagementService.entity.AccountStatus;
+import jakarta.validation.constraints.Email;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 public class AccountPatchDTO {
 
+    @Email(message = "Invalid email format")
     private String email;
     private AccountStatus status;
 
@@ -15,19 +21,4 @@ public class AccountPatchDTO {
         this.status = status;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public AccountStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(AccountStatus status) {
-        this.status = status;
-    }
 }

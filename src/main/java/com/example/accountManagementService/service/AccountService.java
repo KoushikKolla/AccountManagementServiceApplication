@@ -28,7 +28,7 @@ public class AccountService {
 
         response.setAccountId(account.getAccountId());
         response.setCustomerName(account.getCustomerName());
-        response.setEmail(account.getEmail());
+        response.setEmail(account.getEmail().toLowerCase());
         response.setBalance(account.getBalance());
         response.setAccountType(account.getAccountType());
         response.setStatus(account.getStatus());
@@ -41,7 +41,7 @@ public class AccountService {
         Account account = new Account();
 
         account.setCustomerName(requestDTO.getCustomerName());
-        account.setEmail(requestDTO.getEmail());
+        account.setEmail(requestDTO.getEmail().toLowerCase().trim());
         account.setBalance(requestDTO.getBalance());
         account.setAccountType(requestDTO.getAccountType());
 
@@ -86,7 +86,7 @@ public class AccountService {
                         new AccountNotFoundException(accountId));
 
         account.setCustomerName(requestDTO.getCustomerName());
-        account.setEmail(requestDTO.getEmail());
+        account.setEmail(requestDTO.getEmail().trim().toLowerCase());
         account.setBalance(requestDTO.getBalance());
         account.setAccountType(requestDTO.getAccountType());
 
@@ -105,7 +105,7 @@ public class AccountService {
                         new AccountNotFoundException(accountId));
 
         if (patchDTO.getEmail() != null) {
-            account.setEmail(patchDTO.getEmail());
+            account.setEmail(patchDTO.getEmail().trim().toLowerCase());
         }
 
         if (patchDTO.getStatus() != null) {

@@ -88,7 +88,7 @@ public class AccountController {
     @PatchMapping("/{accountId}")
     public ResponseEntity<AccountResponseDTO> patchAccount(
             @PathVariable Long accountId,
-            @RequestBody AccountPatchDTO patchDTO) {
+            @Valid @RequestBody AccountPatchDTO patchDTO) {
 
         return ResponseEntity.ok(
                 accountService.patchAccount(
